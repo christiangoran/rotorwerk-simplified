@@ -41,7 +41,7 @@ const Footer = () => {
         <span className="block text-sm text-gray-500 text-center dark:text-gray-400">
           © 2024{" "}
           <a href="https://flowbite.com/" className="hover:underline">
-            Christian Göran™
+            Norbert Schutz™
           </a>
           . All Rights Reserved.
         </span>
