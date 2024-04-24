@@ -14,10 +14,10 @@ import Impressum from "./pages/Impressum";
 
 function App() {
   return (
-    <BrowserRouter basename="/rotorwerk-simplified">
+    <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Hero />} exact />
+        <Route path="/rotorwerk-simplified" element={<Hero />} exact />
         <Route path="/konstruktion" element={<Konstruktion />} />
         <Route path="/fem" element={<Fem />} />
         <Route path="/wea-entwicklung" element={<Wea />} />
