@@ -14,7 +14,7 @@ import Impressum from "./pages/Impressum";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rotorwerk-simplified">
       <Header />
       <Routes>
         <Route path="/" element={<Hero />} exact />
