@@ -81,7 +81,7 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+          <Link to="/rotorwerk-simplified" className="-m-1.5 p-1.5">
             <span className="sr-only">RotorWerk</span>
             <img className="h-16" src={logo} alt="" />
           </Link>
@@ -124,7 +124,7 @@ export default function Header() {
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          className="h-6 w-6 text-gray-600 group-hover:text-lime-900"
                           aria-hidden="true"
                         />
                       </div>
