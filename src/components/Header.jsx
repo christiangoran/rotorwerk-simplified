@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
@@ -16,42 +18,45 @@ import {
   InboxArrowDownIcon,
 } from "@heroicons/react/20/solid";
 import logo from "../assets/rotorwerk_logo.svg";
+import { HashLink } from "react-router-hash-link";
+
+// ----------------MENU ITEMS----------------
 
 const products = [
   {
     name: "Konstruktion",
     description: "Get a better understanding of your traffic",
-    href: "#",
+    href: "/konstruktion",
     icon: WrenchScrewdriverIcon,
   },
   {
     name: "FEM",
     description: "Speak directly to your customers",
-    href: "#",
+    href: "/fem",
     icon: ChartPieIcon,
   },
   {
     name: "WEA-Entwicklung",
     description: "Your customers’ data will be safe and secure",
-    href: "#",
+    href: "/wea-entwicklung",
     icon: ClipboardDocumentCheckIcon,
   },
   {
     name: "Tech. Dokumentation",
     description: "Connect with third-party tools",
-    href: "#",
+    href: "/documentation",
     icon: DocumentChartBarIcon,
   },
   {
     name: "Zulieferauswahl",
     description: "Build strategic funnels that will convert",
-    href: "#",
+    href: "/zulieferauswahl",
     icon: SquaresPlusIcon,
   },
   {
     name: "Betriebsfestigkeit",
     description: "Build strategic funnels that will convert",
-    href: "#",
+    href: "/betriebsfestigkeit",
     icon: CubeTransparentIcon,
   },
 ];
@@ -59,6 +64,8 @@ const callsToAction = [
   { name: "E-Mail uns", href: "#", icon: InboxArrowDownIcon },
   { name: "Kontakt uns", href: "#", icon: PhoneIcon },
 ];
+
+// ----------------MENU ITEMS END----------------
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -70,14 +77,14 @@ export default function Header() {
   return (
     <header className="bg-white top-0">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="z-100 mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <Link to="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">RotorWerk</span>
             <img className="h-16" src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -122,13 +129,13 @@ export default function Header() {
                         />
                       </div>
                       <div className="flex-auto">
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           className="block font-semibold text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">{item.description}</p>
                       </div>
                     </div>
@@ -153,12 +160,18 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <HashLink
+            to="#contact"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Kontakt
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </HashLink>
+          <Link
+            to="/impressum"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Impressum
-          </a>
+          </Link>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Datenschutz
           </a>
@@ -179,10 +192,10 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+            <Link to="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Home</span>
               <img className="h-8 w-auto" src={logo} alt="" />
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -223,23 +236,29 @@ export default function Header() {
                     </>
                   )}
                 </Disclosure>
+                <HashLink
+                  to="#contact"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Kontakt
+                </HashLink>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  Impressum
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Marketplace
+                  Datenschutz
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Company
+                  English
                 </a>
               </div>
             </div>
