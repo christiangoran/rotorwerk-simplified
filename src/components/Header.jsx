@@ -81,7 +81,7 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link to="/rotorwerk-simplified" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">RotorWerk</span>
             <img className="h-16" src={logo} alt="" />
           </Link>

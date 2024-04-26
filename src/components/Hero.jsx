@@ -36,14 +36,14 @@ export default function Hero() {
           />
         </svg>
       </div>
-      <div className="relative isolate px-6 pt-14 lg:px-8 flex flex-col md:flex-row items-center ">
+      <div className="relative isolate px-6 pt-14 lg:px-8 flex flex-col md:flex-row items-center">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
         >
           <div />
         </div>
-        <div className="mx-auto pr-20 max-w-2xl py-32 sm:py-0 lg:py-20">
+        <div className="mx-auto pr-20 max-w-2xl py-8 md:py-8 lg:py-40">
           <div className="text-left">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-5xl lg:text-6xl">
               15+ Jahre Branchenerfahrung im Windenergie-Sektor: <br />
@@ -69,7 +69,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="rounded-3xl w-full h-auto sm:w-3/4 lg:w-1/2">
+        <div className="rounded-3xl w-full h-auto sm:w-3/4 lg:w-1/2 py-20">
           <img src={heroImage} alt="Wind turbine" className="rounded-3xl" />
         </div>
       </div>

@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/rotorwerk-simplified" element={<Hero />} exact />
+        <Route path="/" element={<Hero />} exact />
         <Route path="/konstruktion" element={<Konstruktion />} />
         <Route path="/fem" element={<Fem />} />
         <Route path="/wea-entwicklung" element={<Wea />} />
