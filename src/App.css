@@ -4,6 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+/* svg {
+  overflow: visible;
+  width: 20vw;
+} */
 
 .logo {
   height: 6em;
@@ -40,3 +44,18 @@
 .read-the-docs {
   color: #888;
 }
+
+/* @keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#blades1,
+#blades2 {
+  animation: rotate 2s linear infinite;
+  transform-origin: left;
+} */
