@@ -1,4 +1,4 @@
-import rotorwerk_logo from "../assets/rotorwerk_logo.svg";
+import rotorwerk_logo from "../assets/logo.png";
 import Contact from "./Contact";
 import { Link } from "react-router-dom";
 

@@ -48,8 +48,9 @@ export default function Hero() {
         <div className="mx-auto pr-20 max-w-2xl py-8 md:py-8 lg:py-16">
           <div className="text-left">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-5xl lg:text-6xl">
-              15+ Years of Industry Experience in Engineering Solutions: <br />
-              Your Expert in Finite Element Analysis and More
+              <span className="text-yellow-600"> 15+ Years</span> of Experience
+              in Engineering Solutions: <br />
+              Experts in FEM and More
             </h1>
             <p className="mt-6 text-lg leading-9 text-gray-600">
               Rotorwerk: Technological Expertise for a Sustainable Future. Over

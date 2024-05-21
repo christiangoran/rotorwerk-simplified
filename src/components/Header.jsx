@@ -17,7 +17,7 @@ import {
   PhoneIcon,
   InboxArrowDownIcon,
 } from "@heroicons/react/20/solid";
-import logo from "../assets/rotorwerk_logo.svg";
+import logo from "../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
 
 // ----------------MENU ITEMS----------------
@@ -25,37 +25,42 @@ import { HashLink } from "react-router-hash-link";
 const products = [
   {
     name: "Konstruktion",
-    description: "Get a better understanding of your traffic",
+    description: "Design, analyze, and optimize complex systems.",
     href: "/konstruktion",
     icon: WrenchScrewdriverIcon,
   },
   {
     name: "FEM",
-    description: "Speak directly to your customers",
+    description:
+      "Our advanced techniques ensure precision and safety in your projects.",
     href: "/fem",
     icon: ChartPieIcon,
   },
   {
     name: "WEA-Entwicklung",
-    description: "Your customers’ data will be safe and secure",
+    description:
+      "We design and optimize components for maximum efficiency and reliability.",
     href: "/wea-entwicklung",
     icon: ClipboardDocumentCheckIcon,
   },
   {
     name: "Tech. Dokumentation",
-    description: "Connect with third-party tools",
+    description:
+      "We create comprehensive technical documentation to support your engineering processes.",
     href: "/documentation",
     icon: DocumentChartBarIcon,
   },
   {
     name: "Zulieferauswahl",
-    description: "Build strategic funnels that will convert",
+    description:
+      "Fatigue analysis services assess the durability and lifespan of mechanical components.",
     href: "/zulieferauswahl",
     icon: SquaresPlusIcon,
   },
   {
     name: "Betriebsfestigkeit",
-    description: "Build strategic funnels that will convert",
+    description:
+      "We assist in selecting the best suppliers for your engineering needs",
     href: "/betriebsfestigkeit",
     icon: CubeTransparentIcon,
   },

@@ -9,7 +9,7 @@ const Testimonials = () => {
         <div className="flex space-x-1">
           {[...Array(5)].map((star, index) => (
             <div key={index}>
-              <StarIcon className="h-6 w-6 text-lime-900" />
+              <StarIcon className="h-6 w-6 text-yellow-600" />
             </div>
           ))}
         </div>

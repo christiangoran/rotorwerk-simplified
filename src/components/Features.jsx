@@ -51,7 +51,7 @@ export default function Features() {
     <div className="h-1/2 flex lg:py-48">
       <div className="h-1/2 w-full">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-lime-900 text-base leading-7 font-semibold">
+          <h2 className="text-yellow-600 text-base leading-7 font-semibold">
             About us
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

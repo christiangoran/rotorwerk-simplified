@@ -6,6 +6,51 @@ import {
 } from "@heroicons/react/20/solid";
 import konstruktion from "../assets/konstruktion-1.webp";
 
+const industryAreas = [
+  {
+    title: "Heavy Machinery Engineering",
+    description:
+      "We specialize in designing heavy machinery that meets the highest standards of durability and efficiency. Our innovative engineering solutions ensure peak performance in the most demanding environments, making us a trusted partner in the heavy machinery sector.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Custom Machinery Engineering",
+    description:
+      "Tailored solutions for unique challenges. Our custom machinery engineering services deliver specialized equipment designed to meet your specific operational needs. We combine cutting-edge technology with expert craftsmanship to create machines that enhance productivity and efficiency.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Wind Industry Engineering",
+    description:
+      "Driving innovation in the wind industry, we provide comprehensive engineering solutions for wind energy projects. From design to implementation, our expertise ensures optimal performance and reliability of wind turbines and related components, contributing to a sustainable future.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "General Machinery Engineering",
+    description:
+      "Delivering excellence in mechanical engineering, we cover a broad spectrum of services from concept to completion. Our experienced team applies advanced engineering principles to design, analyze, and optimize mechanical systems for various industrial applications.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Structural Steel Engineering",
+    description:
+      "Expertise in structural steel design and fabrication. We offer robust and innovative engineering solutions for structural steel projects, ensuring safety, stability, and longevity. Our services cover everything from initial design to final construction.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Lightweight Construction Engineering",
+    description:
+      "Optimizing performance with lightweight construction. Our engineering solutions focus on reducing weight without compromising strength and durability. Ideal for industries where efficiency and performance are critical, our lightweight designs set the standard.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Load Handling Equipment Engineering",
+    description:
+      "Designing reliable load handling equipment to enhance safety and efficiency. Our engineering services for load handling equipment ensure that your operations run smoothly and safely, with equipment designed to meet rigorous standards and specific requirements.",
+    icon: WrenchIcon,
+  },
+];
+
 export default function Konstruktion() {
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 text-left">
@@ -70,98 +115,17 @@ export default function Konstruktion() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Schwermaschinenbau
-                    </strong>{" "}
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Maiores impedit perferendis suscipit eaque, iste dolor
-                    cupiditate blanditiis ratione.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Sondermaschinenbau
-                    </strong>{" "}
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                    qui lorem cupidatat commodo.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Windindustrie
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      allg. Maschinenbau
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Stahlbau
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Leichtbau
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Lastaufnahmemittel
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
+                {industryAreas.map((area, index) => (
+                  <li key={index} className="flex gap-x-3">
+                    <area.icon className="h-6 w-6 text-lime-900" />
+                    <span>
+                      <strong className="font-semibold text-gray-900">
+                        {area.title}
+                      </strong>{" "}
+                      {area.description}
+                    </span>
+                  </li>
+                ))}
               </ul>
               <p className="mt-8">
                 Soll die Konstruktion auf Verformungen, Verschiebungen,
