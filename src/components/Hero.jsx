@@ -1,6 +1,8 @@
 import { HashLink } from "react-router-hash-link";
 import heroImage from "../assets/turbine.webp";
 import { Link } from "react-router-dom";
+import Testimonials from "./Testimonials";
+import Features from "./Features";
 
 export default function Hero() {
   return (
@@ -43,15 +45,16 @@ export default function Hero() {
         >
           <div />
         </div>
-        <div className="mx-auto pr-20 max-w-2xl py-8 md:py-8 lg:py-40">
+        <div className="mx-auto pr-20 max-w-2xl py-8 md:py-8 lg:py-16">
           <div className="text-left">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-5xl lg:text-6xl">
-              15+ Jahre Branchenerfahrung im Windenergie-Sektor: <br />
-              Ihr Experte für Windkraftanlagen
+              15+ Years of Industry Experience in Engineering Solutions: <br />
+              Your Expert in Finite Element Analysis and More
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Rotorwerk: Technologisches Knowhow für eine grüne Zukunft. Über 10
-              erfolgreich entwickelte Windkraftanlagen sprechen für sich.
+            <p className="mt-6 text-lg leading-9 text-gray-600">
+              Rotorwerk: Technological Expertise for a Sustainable Future. Over
+              10 successfully developed wind turbines and countless engineering
+              projects speak for themselves.
             </p>
             <div className="mt-10 flex items-center justify-left gap-x-6">
               <HashLink
@@ -73,6 +76,8 @@ export default function Hero() {
           <img src={heroImage} alt="Wind turbine" className="rounded-3xl" />
         </div>
       </div>
+      <Features />
+      <Testimonials />
     </div>
   );
 }

@@ -77,15 +77,17 @@ export default function Header() {
   return (
     <header className="bg-white top-0 relative">
       <nav
-        className="z-100 mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="z-100 mx-auto flex max-w-7xl items-center justify-between p-0 lg:px-8"
         aria-label="Global"
       >
+        {/* Logo */}
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">RotorWerk</span>
             <img className="h-16" src={logo} alt="" />
           </Link>
         </div>
+        {/* Mobile menu button */}
         <div className="flex lg:hidden">
           <button
             type="button"
