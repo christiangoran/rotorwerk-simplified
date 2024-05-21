@@ -3,7 +3,7 @@ import wea from "../assets/wind.webp";
 
 export default function Wea() {
   return (
-    <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 text-left">
+    <div className="relative isolate overflow-hidden bg-white px-6 pt-24 sm:pt-32 lg:overflow-visible lg:px-0 text-left">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -37,7 +37,7 @@ export default function Wea() {
       </div>
       <div className="grid-cols-1 gap-16 grid mx-auto max-w-6xl lg:grid-cols-4">
         <div className="col-span-1 text-center lg:col-span-4">
-          <p className="text-base font-semibold leading-7 text-lime-800">
+          <p className="text-base font-semibold leading-7 text-yellow-600">
             WEA-Entwicklung
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

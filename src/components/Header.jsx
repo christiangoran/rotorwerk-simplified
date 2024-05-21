@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
@@ -26,42 +25,42 @@ const products = [
   {
     name: "Konstruktion",
     description: "Design, analyze, and optimize complex systems.",
-    href: "/konstruktion",
+    href: "konstruktion",
     icon: WrenchScrewdriverIcon,
   },
   {
     name: "FEM",
     description:
       "Our advanced techniques ensure precision and safety in your projects.",
-    href: "/fem",
+    href: "fem",
     icon: ChartPieIcon,
   },
   {
     name: "WEA-Entwicklung",
     description:
       "We design and optimize components for maximum efficiency and reliability.",
-    href: "/wea-entwicklung",
+    href: "wea-entwicklung",
     icon: ClipboardDocumentCheckIcon,
   },
   {
     name: "Tech. Dokumentation",
     description:
       "We create comprehensive technical documentation to support your engineering processes.",
-    href: "/documentation",
+    href: "documentation",
     icon: DocumentChartBarIcon,
   },
   {
     name: "Zulieferauswahl",
     description:
       "Fatigue analysis services assess the durability and lifespan of mechanical components.",
-    href: "/zulieferauswahl",
+    href: "zulieferauswahl",
     icon: SquaresPlusIcon,
   },
   {
     name: "Betriebsfestigkeit",
     description:
       "We assist in selecting the best suppliers for your engineering needs",
-    href: "/betriebsfestigkeit",
+    href: "betriebsfestigkeit",
     icon: CubeTransparentIcon,
   },
 ];
@@ -137,7 +136,7 @@ export default function Header() {
                       </div>
                       <div className="flex-auto">
                         <Link
-                          to={item.href}
+                          to={`/${item.href}`}
                           className="block font-semibold text-gray-900"
                         >
                           {item.name}
@@ -150,9 +149,9 @@ export default function Header() {
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                   {callsToAction.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                     >
                       <item.icon
@@ -160,7 +159,7 @@ export default function Header() {
                         aria-hidden="true"
                       />
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
@@ -174,20 +173,29 @@ export default function Header() {
             Kontakt
           </HashLink>
           <Link
-            to="/impressum"
+            to="impressum"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Impressum
           </Link>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            to="datenschutz"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Datenschutz
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link
+            to="agb"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             AGB
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link
+            to="english"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             English
-          </a>
+          </Link>
         </Popover.Group>
       </nav>
       <Dialog
@@ -199,7 +207,7 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link to="/rotorwerk-simplified" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Home</span>
               <img className="h-8 w-auto" src={logo} alt="" />
             </Link>
@@ -232,8 +240,8 @@ export default function Header() {
                         {[...products, ...callsToAction].map((item) => (
                           <Disclosure.Button
                             key={item.name}
-                            as="a"
-                            href={item.href}
+                            as={Link}
+                            to={`/${item.href}`}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -249,24 +257,24 @@ export default function Header() {
                 >
                   Kontakt
                 </HashLink>
-                <a
-                  href="#"
+                <Link
+                  to="impressum"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Impressum
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="datenschutz"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Datenschutz
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="english"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   English
-                </a>
+                </Link>
               </div>
             </div>
           </div>

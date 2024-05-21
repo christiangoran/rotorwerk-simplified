@@ -1,6 +1,62 @@
 import { WrenchIcon } from "@heroicons/react/20/solid";
 import fem from "../assets/fem.webp";
 
+const specialServices = [
+  {
+    title: "FEM",
+    description:
+      "( Finite-Elemente-Methode ) Berechnung und Untersuchung von maschinenbaulichen Komponenten aller Art",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Strukturdynamik",
+    description:
+      "lineare und nichtlineare Strukturdynamik und Festigkeitsberechnung",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Untersuchung von Strukturen",
+    description: "aus Faser-Kunststoff-Verbund (z.B. GFK, CFK)",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Modal- uns Schwingungsanalysen:",
+    description:
+      "Wir führen Modal- und Schwingungsanalysen durch, um das dynamische Verhalten von Strukturen zu bewerten und mögliche Resonanzprobleme zu identifizieren.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Beulanalysen:",
+    description:
+      "Unsere Beulanalysen helfen, die strukturelle Stabilität zu gewährleisten, indem sie die kritischen Lasten bewerten, die Verformungen verursachen können.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "dynamische, transiente Analysen:",
+    description:
+      "Wir führen dynamische, transiente Analysen durch, um das zeitabhängige Verhalten von Strukturen unter variierenden Lasten zu untersuchen.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Analysen mit hyperelastischem Material:",
+    description:
+      "Wir analysieren Strukturen aus hyperelastischen Materialien, um deren Reaktion unter großen Deformationen vorherzusagen.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Nachweise von Lastaufnahmemitteln:",
+    description:
+      "Wir überprüfen die Tragfähigkeit von Lastaufnahmemitteln, um deren Sicherheit und Zuverlässigkeit zu gewährleisten.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Erstellen von APDl-Macros (ANSYS):",
+    description:
+      "Wir erstellen APDL-Macros zur Automatisierung von Arbeitsabläufen und zur Modellierung parametrisierbarer Geometrien und Strukturen.",
+    icon: WrenchIcon,
+  },
+];
+
 export default function Fem() {
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0 text-left">
@@ -39,7 +95,7 @@ export default function Fem() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-lime-800">
+              <p className="text-base font-semibold leading-7 text-yellow-600">
                 FEM
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -53,7 +109,7 @@ export default function Fem() {
                 Bauteile im Vorfeld auf ihre statische Festigkeit und
                 Ermüdungsbeanspruchung untersucht und berechnet werden.
               </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+              <h2 className="mt-16 mb-2 text-2xl font-bold tracking-tight text-gray-900">
                 Arbeitsschritte und Leistungen
               </h2>
             </div>
@@ -72,7 +128,7 @@ export default function Fem() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-              <p className="mt-8">
+              <p className="mt-0">
                 Dazu wird das zu untersuchende Bauteil so realitätsnah wie
                 notwendig mit all seinen benachbarten Komponenten und deren
                 Randbedingungen modelliert. Dabei auftretende Nichtlinearitäten,
@@ -80,12 +136,12 @@ export default function Fem() {
                 berücksichtigt werden. Das mechanische Verhalten der Struktur
                 wird dadurch wesentlich wirklichkeitsgetreuer wiedergegeben.
               </p>
-              <p className="mt-8">
+              <p className="mt-4">
                 Ist eine Schwingungsanalyse der Struktur erforderlich, so können
                 mit Hilfe der<b> Finite-Elemente-Methode ( FEM Berechnung )</b>{" "}
                 die Eigenfrequenzen und Schwingungsmodi bestimmt werden.
               </p>
-              <p className="mt-8">
+              <p className="mt-4">
                 Alles was wir für eine<b> FEM Berechnung</b> bzw.
                 <b> Analyse </b>von Ihnen benötigen, sind die geometrischen
                 Daten in Form einer Zeichnung oder als CAD-Datei, die
@@ -97,126 +153,23 @@ export default function Fem() {
               </h3>
 
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">FEM</strong>{" "}
-                    ( Finite-Elemente-Methode ) Berechnung und Untersuchung von
-                    maschinenbaulichen Komponenten aller Art
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Strukturdynamik
-                    </strong>{" "}
-                    lineare und nichtlineare Strukturdynamik und
-                    Festigkeitsberechnung
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Untersuchung von Strukturen
-                    </strong>{" "}
-                    aus Faser-Kunststoff-Verbund (z.B. GFK, CFK)
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Modal- uns Schwingungsanalysen
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Beulanalysen
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      dynamische, transiente Analysen
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Analysen mit hyperelastischem Material
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Nachweise von Lastaufnahmemitteln
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <WrenchIcon
-                    className="mt-1 h-5 w-5 flex-none text-lime-700"
-                    aria-hidden="true"
-                  />
-                  <span>
-                    <strong className="font-semibold text-gray-900">
-                      Erstellen von APDl-Macros (ANSYS)
-                    </strong>{" "}
-                    zur Automation von Arbeitsabläufen und zur Modellierung
-                    wiederkehrender parametrisierbarer Geometrien und Strukturen
-                  </span>
-                </li>
+                {specialServices.map((service, index) => (
+                  <li key={index} className="flex gap-x-3">
+                    <service.icon className="h-6 w-6 text-lime-900" />
+                    <span>
+                      <strong className="font-semibold text-gray-900">
+                        {service.title}
+                      </strong>{" "}
+                      {service.description}
+                    </span>
+                  </li>
+                ))}
               </ul>
               <h3 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
                 APDL-Macros (ANSYS)
               </h3>
 
-              <p className="mt-8">
+              <p className="mt-4">
                 In ANSYS lassen sich durch die APDL Macro-Programmierung
                 Arbeitsschritte automatisieren bzw. lassen sich auch Ergebnisse
                 in gewünschten Formaten ausgeben. Im Laufe der Zeit sind bei uns
