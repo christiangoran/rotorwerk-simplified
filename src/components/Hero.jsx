@@ -1,8 +1,9 @@
 import { HashLink } from "react-router-hash-link";
 import heroImage from "../assets/turbine.webp";
-import { Link } from "react-router-dom";
+
 import Testimonials from "./Testimonials";
 import Features from "./Features";
+import OurPeople from "./OurTeam";
 
 export default function Hero() {
   return (
@@ -64,12 +65,12 @@ export default function Hero() {
               >
                 Kontakt uns
               </HashLink>
-              <Link
-                to="/konstruktion"
-                className="text-sm font-semibold leading-6 text-gray-900"
+              <HashLink
+                to="#features"
+                className="text-sm font-semibold leading-6 text-yellow-600"
               >
                 Lern mehr <span aria-hidden="true">→</span>
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>
@@ -79,6 +80,7 @@ export default function Hero() {
       </div>
       <Features />
       <Testimonials />
+      <OurPeople />
     </div>
   );
 }

@@ -18,6 +18,7 @@ import {
 } from "@heroicons/react/20/solid";
 import logo from "../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
+import rwAgb from "../assets/rw_agb.pdf";
 
 // ----------------MENU ITEMS----------------
 
@@ -179,17 +180,19 @@ export default function Header() {
             Impressum
           </Link>
           <Link
-            to="datenschutz"
+            to="impressum"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Datenschutz
           </Link>
-          <Link
-            to="agb"
+          <a
+            href={rwAgb}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             AGB
-          </Link>
+          </a>
           <Link
             to="english"
             className="text-sm font-semibold leading-6 text-gray-900"

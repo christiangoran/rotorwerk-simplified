@@ -53,7 +53,7 @@ export default function Betriebsfestigkeit() {
                 und Offshore-Technologie) oder im Stahlbau (Eurocode 3). Wir
                 haben dafür ein spezielles Software-Tool entwickelt.
               </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+              <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">
                 Betriebsfestigkeitsberechnung mit Zeitreihen
               </h2>
             </div>
@@ -72,7 +72,7 @@ export default function Betriebsfestigkeit() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-              <p className="mt-8">
+              <p className="">
                 <b>
                   {" "}
                   Bisher: Berechnung mittels Rain-Flow-Count bzw.
@@ -85,7 +85,7 @@ export default function Betriebsfestigkeit() {
                 Materialkennwerten gesetzt (Wöhlerlinie), wie z.B. mittels
                 Rain-Flow-Count bzw. Einstufenkollektiv.
               </p>
-              <p className="mt-8">
+              <p className="mt-6">
                 <b>Neu: Berücksichtigung von Zeitreihen </b>Mit Hilfe speziell
                 entwickelter Simulations- und Auswertetechnologie ist es jetzt
                 möglich, den Zusammenhang zwischen den unterschiedlichen Kraft-
@@ -97,7 +97,7 @@ export default function Betriebsfestigkeit() {
                 gleichzeitig und außerdem variabel auftreten, wie z.B. bei
                 Windenergieanlagen.
               </p>
-              <p className="mt-8">
+              <p className="mt-6">
                 <b>Die Vorteile auf einen Blick</b>
               </p>
 

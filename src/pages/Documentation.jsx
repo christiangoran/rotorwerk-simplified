@@ -40,7 +40,7 @@ export default function Documentation() {
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
               <p className="text-base font-semibold leading-7 text-yellow-600">
-                Tech.Doc
+                Tech. Doc.
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Technische Dokumentation und Erstellung von Schulungsunterlagen
@@ -52,7 +52,7 @@ export default function Documentation() {
                 auch in Bezug auf Bedienungsanleitungen und Handbücher für
                 Kunden oder Verbraucher.
               </p>
-              <p className="mt-6 leading-8 text-gray-700">
+              <p className="mt-12 leading-8 text-gray-700">
                 Bei der Erstellung von Schulungsunterlagen greifen wir auf
                 hauseigene didaktische und redaktionelle Kompetenzen zurück, auf
                 Wunsch auch in Kombination mit entsprechender Gestaltung.
@@ -73,7 +73,7 @@ export default function Documentation() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+              <h2 className="mt-0 text-2xl font-bold tracking-tight text-gray-900">
                 Unsere Leistungen
               </h2>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">

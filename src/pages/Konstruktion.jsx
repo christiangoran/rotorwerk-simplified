@@ -90,13 +90,13 @@ export default function Konstruktion() {
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
               <p className="text-base font-semibold leading-7 text-yellow-600">
-                We also design.
+                We also create
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Constructions
               </h1>
               <p className="mt-6 text-xl leading-8 text-gray-700">
-                Design for the industries and sectors:
+                Designs for the industries and sectors:
               </p>
             </div>
           </div>
@@ -128,13 +128,13 @@ export default function Konstruktion() {
                 ))}
               </ul>
 
-              <p className="mt-8">
+              <p className="mt-6">
                 If the construction is to be examined for deformations,
                 displacements, static strength, and lifespan (fatigue strength),
                 we use the <b>Finite Element Method (FEM calculation) </b>
                 for this purpose.
               </p>
-              <p className="mt-8">
+              <p className="mt-6">
                 All we further need from you for the<b> FEM calculation</b> or{" "}
                 <b>analysis</b> are any neighboring components and their
                 properties, the bearing if it is located in the neighboring
