@@ -1,11 +1,11 @@
 import norbert from "../assets/norbert.png";
-import filler1 from "../assets/fillers-1.webp";
+import meeting from "../assets/fillers-1.webp";
 import filler2 from "../assets/fillers-2.webp";
-import filler3 from "../assets/fillers-3.webp";
+import writing from "../assets/fillers-3.webp";
 
 const OurPeople = () => {
   return (
-    <section className="bg-white py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-left relative">
+    <section className="bg-white py-8 px-4 sm:py-48 sm:px-6 lg:px-8 text-left relative">
       <div className="width-full mx-auto">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="lg:col-start-1 lg:pr-8">
@@ -34,9 +34,9 @@ const OurPeople = () => {
                 Work with us
               </a>
             </div>
-            <div className="aspect-w- aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-1 sm:aspect-h-1 col-span-2 pt-32">
+            <div className="aspect-w- aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-1 sm:aspect-h-1 col-span-2 pt-12">
               <img
-                src={filler1}
+                src={meeting}
                 alt="Team 4"
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -44,26 +44,26 @@ const OurPeople = () => {
           </div>
           <div className="mt-10 lg:mt-0 lg:col-start-2">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-2 lg:gap-8">
-              <div className="aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-1 sm:aspect-h-1 col-span-1">
+              <div className="aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-1 sm:aspect-h-1 col-span-1 relative mt-0">
                 <img
-                  src={filler3}
+                  src={writing}
                   alt="Team 2"
-                  className="w-full h-full object-cover"
+                  className="h-400 object-cover rounded-lg"
                 />
               </div>
-              <div className="aspect-w-24 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-1 sm:aspect-h-1 relative">
+              <div className="aspect-w-24 aspect-h-1  overflow-hidden sm:aspect-w-1 sm:aspect-h-1 relative mt-24">
                 <img
                   src={norbert}
                   alt="Team 1"
-                  className="w-full h-full object-cover"
+                  className="h-300 object-cover rounded-lg"
                 />
               </div>
 
-              <div className="aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-1 lg:row-span-2 col-span-2">
+              <div className="aspect-w-2 aspect-h-1 overflow-hidden sm:aspect-w-2 sm:aspect-h-1 lg:row-span-2 col-span-2 mt-12">
                 <img
                   src={filler2}
                   alt="Team 3"
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover rounded-lg"
                 />
               </div>
             </div>

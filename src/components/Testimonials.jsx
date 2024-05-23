@@ -4,7 +4,7 @@ import icon from "../assets/icon-rotorwerk-1.png";
 
 const Testimonials = () => {
   return (
-    <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-4 py-48 flex bg-gray-100">
+    <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-4 py-32 flex">
       <div className="max-w-2xl flex flex-col mx-auto items-center text-center justify-center">
         <div className="flex space-x-1">
           {[...Array(5)].map((star, index) => (
