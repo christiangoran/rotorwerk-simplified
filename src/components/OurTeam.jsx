@@ -14,18 +14,17 @@ const OurPeople = () => {
                 Our people
               </h2>
               <p className="mt-4 text-lg text-gray-500">
-                At Rotorwerk, we believe that our team is our greatest asset.
-                Our diverse and talented group of professionals is dedicated to
-                driving innovation and delivering excellence in every project.
-                We work collaboratively to ensure the highest standards of
-                quality and customer satisfaction.
+                At Rotorwerk, we pride ourselves on our collaborative spirit and
+                team-driven approach. Our network of skilled professionals,
+                works in unison to drive innovation and deliver exceptional
+                engineering solutions. Each project benefits from our collective
+                expertise, ensuring top-notch quality and customer satisfaction.
               </p>
               <p className="mt-4 text-lg text-gray-500">
-                Whether it's through advanced engineering solutions, meticulous
-                attention to detail, or our commitment to continuous
-                improvement, our team consistently strives to exceed
-                expectations. We invite you to meet our team and learn more
-                about how we can help bring your projects to life.
+                By fostering a culture of continuous improvement and paying
+                attention to detail, our team consistently exceeds expectations.
+                Discover how our collaborative efforts can bring your
+                engineering projects to life.
               </p>
               <a
                 href="#contact"
