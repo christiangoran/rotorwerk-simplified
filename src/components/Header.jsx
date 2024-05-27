@@ -19,6 +19,7 @@ import {
 import logo from "../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
 import rwAgb from "../assets/rw_agb.pdf";
+import { Logo } from "./Logo";
 
 // ----------------MENU ITEMS----------------
 
@@ -87,10 +88,10 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+          <a href="/">
             <span className="sr-only">RotorWerk</span>
-            <img className="h-12" src={logo} alt="" />
-          </Link>
+            <Logo className="h-12 text-lime-950" />
+          </a>
         </div>
         {/* Mobile menu button */}
         <div className="flex lg:hidden">
