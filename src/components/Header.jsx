@@ -26,49 +26,49 @@ import { Logo } from "./Logo";
 const products = [
   {
     name: "Konstruktion",
-    description: "Design, analyze, and optimize complex systems.",
+    description: "Entwerfen, analysieren und optimieren komplexer Systeme.",
     href: "konstruktion",
     icon: WrenchScrewdriverIcon,
   },
   {
     name: "FEM",
     description:
-      "Our advanced techniques ensure precision and safety in your projects.",
+      "Unsere fortschrittlichen Techniken gewährleisten Präzision und Sicherheit in Ihren Projekten.",
     href: "fem",
     icon: ChartPieIcon,
   },
   {
     name: "WEA-Entwicklung",
     description:
-      "We design and optimize components for maximum efficiency and reliability.",
+      "Wir entwerfen und optimieren Komponenten für maximale Effizienz und Zuverlässigkeit.",
     href: "wea-entwicklung",
     icon: ClipboardDocumentCheckIcon,
   },
   {
     name: "Tech. Dokumentation",
     description:
-      "We create comprehensive technical documentation to support your engineering processes.",
+      "Wir erstellen umfassende technische Dokumentationen zur Unterstützung Ihrer Ingenieurprozesse.",
     href: "documentation",
     icon: DocumentChartBarIcon,
   },
   {
     name: "Zulieferauswahl",
     description:
-      "Fatigue analysis services assess the durability and lifespan of mechanical components.",
+      "Unsere Betriebsfestigkeitsanalyse bewertet die Haltbarkeit und Lebensdauer mechanischer Komponenten.",
     href: "zulieferauswahl",
     icon: SquaresPlusIcon,
   },
   {
     name: "Betriebsfestigkeit",
     description:
-      "We assist in selecting the best suppliers for your engineering needs",
+      "Wir unterstützen Sie bei der Auswahl der besten Lieferanten für Ihre Ingenieuranforderungen.",
     href: "betriebsfestigkeit",
     icon: CubeTransparentIcon,
   },
 ];
 const callsToAction = [
-  { name: "E-Mail uns", href: "#", icon: InboxArrowDownIcon },
-  { name: "Kontakt uns", href: "#", icon: PhoneIcon },
+  { name: "E-Mail uns", href: "kontakt", icon: InboxArrowDownIcon },
+  { name: "Kontakt uns", href: "tel:+491234567890", icon: PhoneIcon },
 ];
 
 // ----------------MENU ITEMS END----------------
@@ -81,9 +81,9 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white top-0 relative">
+    <header className="relative top-0 bg-white">
       <nav
-        className="z-100 mx-auto flex max-w-7xl items-center justify-between p-0 lg:px-8"
+        className="flex items-center justify-between p-0 mx-auto z-100 max-w-7xl lg:px-8"
         aria-label="Global"
       >
         {/* Logo */}
@@ -101,15 +101,15 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+            <Popover.Button className="flex items-center text-sm font-semibold leading-6 text-gray-900 gap-x-1">
+              Produkt
               <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
+                className="flex-none w-5 h-5 text-gray-400"
                 aria-hidden="true"
               />
             </Popover.Button>
@@ -123,16 +123,16 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel className="absolute z-10 w-screen max-w-md mt-3 overflow-hidden bg-white shadow-lg -left-8 top-full rounded-3xl ring-1 ring-gray-900/5">
                 <div className="p-4">
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="relative flex items-center p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50"
                     >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <div className="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-lime-900"
+                          className="w-6 h-6 text-gray-600 group-hover:text-lime-900"
                           aria-hidden="true"
                         />
                       </div>
@@ -157,7 +157,7 @@ export default function Header() {
                       className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                     >
                       <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
+                        className="flex-none w-5 h-5 text-gray-400"
                         aria-hidden="true"
                       />
                       {item.name}
@@ -209,11 +209,11 @@ export default function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Home</span>
-              <img className="h-8 w-auto" src={logo} alt="" />
+              <img className="w-auto h-8" src={logo} alt="" />
             </Link>
             <button
               type="button"
@@ -221,12 +221,12 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
+          <div className="flow-root mt-6">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
+              <div className="py-6 space-y-2">
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
@@ -246,7 +246,7 @@ export default function Header() {
                             key={item.name}
                             as={Link}
                             to={`/${item.href}`}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -257,25 +257,25 @@ export default function Header() {
                 </Disclosure>
                 <HashLink
                   to="#contact"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
                   Kontakt
                 </HashLink>
                 <Link
                   to="impressum"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
                   Impressum
                 </Link>
                 <Link
                   to="datenschutz"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
                   Datenschutz
                 </Link>
                 <Link
                   to="english"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
                   English
                 </Link>

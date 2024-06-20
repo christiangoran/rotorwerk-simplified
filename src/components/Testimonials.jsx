@@ -37,8 +37,8 @@ const Testimonials = () => {
           />
         </svg>
       </div>
-      <div className="grid justify-center flex-auto grid-cols-1 gap-10 md:grid-cols-2">
-        <div className="flex flex-col items-center justify-center max-w-xl mx-auto text-center md:pr-12">
+      <div className="grid justify-start flex-auto grid-cols-1 gap-10 md:grid-cols-2">
+        <div className="flex flex-col items-start justify-center max-w-xl mx-auto text-left md:pr-12">
           <div className="flex space-x-1">
             {[...Array(5)].map((star, index) => (
               <div key={index}>
@@ -47,12 +47,12 @@ const Testimonials = () => {
             ))}
           </div>
           <blockquote className="mt-4 text-xl italic text-gray-600">
-            “None of our colleagues were able to familiarise themselves deeply
-            enough to establish an economical procedure. We got to know and
-            appreciate the Rotorwerk office through a joint customer while
-            working together on a wind turbine. We are grateful for that. Since
-            this joint start, we have successfully completed a number of
-            customer projects together.”
+            “Keiner unserer Kollegen konnte sich tief genug einarbeiten, um ein
+            wirtschaftliches Verfahren zu entwickeln. Wir haben das Büro von
+            Rotorwerk durch einen gemeinsamen Kunden bei der Arbeit an einer
+            Windturbine kennengelernt und schätzen gelernt. Dafür sind wir
+            dankbar. Seit diesem gemeinsamen Start haben wir erfolgreich eine
+            Reihe von Kundenprojekten zusammen abgeschlossen.”
           </blockquote>
           <div className="flex items-center mt-6 space-x-3">
             <img className="w-12 h-12 rounded-full" src={icon} alt="User" />
@@ -60,11 +60,13 @@ const Testimonials = () => {
               <div className="text-base font-medium text-gray-900">
                 Thorsten Loth
               </div>
-              <div className="text-sm text-gray-500">Engineer at Jencad.de</div>
+              <div className="text-sm text-gray-500">
+                Ingenieur bei Jencad.de
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center mx-auto text-center md:pl-12">
+        <div className="flex flex-col items-start justify-center mx-auto text-left md:pl-12">
           <div className="flex space-x-1">
             {[...Array(5)].map((star, index) => (
               <div key={index}>
@@ -73,13 +75,13 @@ const Testimonials = () => {
             ))}
           </div>
           <blockquote className="mt-4 text-xl italic text-gray-600">
-            “What we particularly appreciate about working with Rotorwerk is the
-            very pleasant personal contact, the rapid problem analysis and the
-            solution-oriented and structured approach based on many years of
-            experience. Rotorwerk has always found the right approach for
-            special requests. We were able to discuss the interim results that
-            were important for the progress of the project with Rotorwerk
-            promptly and in detail.”
+            “Was wir an der Zusammenarbeit mit Rotorwerk besonders schätzen, ist
+            der sehr angenehme persönliche Kontakt, die schnelle Problemanalyse
+            und der lösungsorientierte und strukturierte Ansatz, basierend auf
+            jahrelanger Erfahrung. Rotorwerk hat immer den richtigen Ansatz für
+            spezielle Anforderungen gefunden. Wir konnten die für den
+            Fortschritt des Projekts wichtigen Zwischenergebnisse mit Rotorwerk
+            zeitnah und detailliert besprechen.”
           </blockquote>
           <div className="flex items-center mt-6 space-x-3">
             <img className="w-12 h-12 rounded-full" src={icon2} alt="User" />

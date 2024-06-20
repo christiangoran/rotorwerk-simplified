@@ -49,19 +49,19 @@ export default function Hero() {
         <div className="max-w-2xl py-8 pr-20 mx-auto md:py-8 lg:py-16">
           <div className="text-left">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-5xl lg:text-6xl">
-              <span className="text-yellow-600"> 15+ Years</span> of Experience
-              in Engineering Solutions: <br />
-              Experts in FEM and More
+              <span className="text-yellow-600"> 15+ Jahre</span> Erfahrung in
+              der Entwicklung von Lösungen: <br />
+              Experten in FEM und mehr
             </h1>
             <p className="mt-6 text-lg leading-9 text-gray-600">
-              Rotorwerk: Technological Expertise for a Sustainable Future. Over
-              10 successfully developed wind turbines and countless engineering
-              projects speak for themselves.
+              Rotorwerk: Technologische Expertise für eine nachhaltige Zukunft.
+              Über 10 erfolgreich entwickelte Windturbinen und unzählige
+              Ingenieurprojekte sprechen für sich.
             </p>
             <div className="flex items-center mt-10 justify-left gap-x-6">
               <HashLink
                 to="#contact"
-                className="rounded-md bg-lime-950 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-800"
+                className="px-5 py-3 text-white rounded-md shadow-sm bg-gradient-to-br from-lime-900 to-yellow-600 hover:bg-gradient-to-br text-md hover:from-lime-700 hover:to-yellow-600"
               >
                 Kontakt uns
               </HashLink>

@@ -12,42 +12,42 @@ const areas = [
   {
     title: "Konstruktion",
     description:
-      "We offer expert mechanical engineering services to design, analyze, and optimize complex systems. Our solutions ensure efficiency, reliability, and innovation in your projects.",
+      "Wir bieten erstklassige mechanische Ingenieurdienstleistungen zur Konstruktion, Analyse und Optimierung komplexer Systeme. Unsere Lösungen sorgen für Effizienz, Zuverlässigkeit und Innovation in Ihren Projekten.",
     icon: WrenchScrewdriverIcon,
     to: "Konstruktion",
   },
   {
     title: "FEM",
     description:
-      "We specialize in Finite Element Analysis (FEM) to simulate and optimize mechanical systems. Our advanced techniques ensure precision and safety in your projects.",
+      "Wir sind spezialisiert auf die Finite-Elemente-Analyse (FEM) zur Simulation und Optimierung mechanischer Systeme. Unsere fortschrittlichen Techniken sorgen für Präzision und Sicherheit in Ihren Projekten.",
     icon: ChartPieIcon,
     to: "Fem",
   },
   {
-    title: "WEA Development",
+    title: "WEA-Entwicklung",
     description:
-      "Our expertise in WEC development drives innovation in wind energy solutions. We design and optimize components for maximum efficiency and reliability.",
+      "Unser Fachwissen in der WEA-Entwicklung treibt Innovationen im Bereich der Windenergielösungen voran. Wir entwerfen und optimieren Komponenten für maximale Effizienz und Zuverlässigkeit.",
     icon: ClipboardDocumentCheckIcon,
     to: "Wea",
   },
   {
-    title: "Tech Documentation",
+    title: "Technische Dokumentation",
     description:
-      "We create comprehensive technical documentation to support your engineering processes. Our detailed reports ensure compliance and enhance project clarity.",
+      "Wir erstellen umfassende technische Dokumentationen zur Unterstützung Ihrer Ingenieurprozesse. Unsere detaillierten Berichte sorgen für Compliance und verbessern die Projektklarheit.",
     icon: DocumentChartBarIcon,
     to: "Documentaion",
   },
   {
-    title: "Fatigue Analysis",
+    title: "Betriebsfestigkeit",
     description:
-      "Our fatigue analysis services assess the durability and lifespan of mechanical components. We help you predict and mitigate potential failures, ensuring long-term reliability.",
+      "Unsere Dienstleistungen zur Betriebsfestigkeitsanalyse bewerten die Haltbarkeit und Lebensdauer mechanischer Komponenten. Wir helfen Ihnen, potenzielle Ausfälle vorherzusehen und zu mindern, um langfristige Zuverlässigkeit zu gewährleisten.",
     icon: CubeTransparentIcon,
-    to: "Betriebsfastigkeit",
+    to: "Betriebsfestigkeit",
   },
   {
-    title: "Supplier Selection",
+    title: "Zuliefererauswahl",
     description:
-      "We assist in selecting the best suppliers for your engineering needs. Our evaluation process ensures quality, reliability, and cost-effectiveness in your supply chain.",
+      "Wir unterstützen Sie bei der Auswahl der besten Zulieferer für Ihre Ingenieurbedarfe. Unser Bewertungsprozess sorgt für Qualität, Zuverlässigkeit und Kosteneffizienz in Ihrer Lieferkette.",
     icon: SquaresPlusIcon,
     to: "Zulieferauswahl",
   },
@@ -55,32 +55,32 @@ const areas = [
 
 export default function Features() {
   return (
-    <div className="h-1/2 flex lg:py-48">
-      <div className="h-1/2 w-full">
-        <div className="text-center max-w-2xl mx-auto">
+    <div className="flex h-1/2 lg:py-48">
+      <div className="w-full h-1/2">
+        <div className="max-w-2xl mx-auto text-center">
           <h2
-            className="text-yellow-600 text-base leading-7 font-semibold"
+            className="text-base font-semibold leading-7 text-yellow-600"
             id="features"
           >
-            About us
+            Über uns
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Excellence in Mechanical Engineering
+            Exzellenz im Maschinenbau
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-700">
-            At Rotorwerk, we are committed to delivering the highest quality
-            mechanical engineering solutions. Our expertise spans across various
-            domains.
+            Bei Rotorwerk sind wir bestrebt, die hochwertigsten Lösungen im
+            Maschinenbau zu liefern. Unsere Expertise erstreckt sich über
+            verschiedene Bereiche.
           </p>
         </div>
 
-        <div className="mx-auto max-w-5xl mt-16">
+        <div className="max-w-5xl mx-auto mt-16">
           <dl className="grid max-w-xl grid-cols-1 gap-x-12 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {areas.map((area, index) => (
               <div key={index} className="relative pl-16 text-left">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-lime-900">
-                    <area.icon className="h-6 w-6 text-white" />
+                  <div className="absolute top-0 left-0 flex items-center justify-center w-10 h-10 rounded-lg bg-lime-900">
+                    <area.icon className="w-6 h-6 text-white" />
                   </div>
                 </dt>
                 {area.title}
@@ -89,9 +89,9 @@ export default function Features() {
                 </dd>
                 <Link
                   to={area.to}
-                  className="text-sm leading-6 text-yellow-600"
+                  className="text-sm leading-6 text-yellow-600 hover:text-yellow-400"
                 >
-                  Read more...
+                  Mehr erfahren…
                 </Link>
               </div>
             ))}
