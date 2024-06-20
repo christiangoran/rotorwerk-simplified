@@ -11,6 +11,7 @@ import Documentation from "./pages/Documentation";
 import Zulieferauswahl from "./pages/Zulieferauswahl";
 import Betriebsfestigkeit from "./pages/Betriebsfastigkeit";
 import Impressum from "./pages/Impressum";
+import CookieBanner from "./components/CookieBanner";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/impressum" element={<Impressum />} />
       </Routes>
       <Footer />
+      <CookieBanner />
     </BrowserRouter>
   );
 }
