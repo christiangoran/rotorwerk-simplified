@@ -4,8 +4,32 @@ import heroImage from "../assets/turbine.webp";
 import Testimonials from "./Testimonials";
 import Features from "./Features";
 import OurPeople from "./OurTeam";
+import { useLanguage } from "../context/LanguageContext";
+
+const heroContent = {
+  de: {
+    experience: "15+ Jahre",
+    header:
+      "Erfahrung in der Entwicklung von Lösungen: Experten in FEM und mehr",
+    description:
+      "Rotorwerk: Technologische Expertise für eine nachhaltige Zukunft. Über 10 erfolgreich entwickelte Windturbinen und unzählige Ingenieurprojekte sprechen für sich.",
+    contactUs: "Kontakt uns",
+    learnMore: "Lern mehr",
+  },
+  en: {
+    experience: "15+ Years",
+    header: "Experience in Solution Development: Experts in FEM and More",
+    description:
+      "Rotorwerk: Technological Expertise for a Sustainable Future. Over 10 successfully developed wind turbines and countless engineering projects speak for themselves.",
+    contactUs: "Contact Us",
+    learnMore: "Learn More",
+  },
+};
 
 export default function Hero() {
+  const { language } = useLanguage();
+  const content = heroContent[language];
+
   return (
     <div className="relative isolate">
       <div className="absolute inset-0 overflow-hidden -z-10">
@@ -49,27 +73,24 @@ export default function Hero() {
         <div className="max-w-2xl py-8 pr-20 mx-auto md:py-8 lg:py-16">
           <div className="text-left">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-5xl lg:text-6xl">
-              <span className="text-yellow-600"> 15+ Jahre</span> Erfahrung in
-              der Entwicklung von Lösungen: <br />
-              Experten in FEM und mehr
+              <span className="text-yellow-600">{content.experience}</span>{" "}
+              {content.header}
             </h1>
             <p className="mt-6 text-lg leading-9 text-gray-600">
-              Rotorwerk: Technologische Expertise für eine nachhaltige Zukunft.
-              Über 10 erfolgreich entwickelte Windturbinen und unzählige
-              Ingenieurprojekte sprechen für sich.
+              {content.description}
             </p>
             <div className="flex items-center mt-10 justify-left gap-x-6">
               <HashLink
                 to="#contact"
                 className="px-5 py-3 text-white rounded-md shadow-sm bg-gradient-to-br from-lime-900 to-yellow-600 hover:bg-gradient-to-br text-md hover:from-lime-700 hover:to-yellow-600"
               >
-                Kontakt uns
+                {content.contactUs}
               </HashLink>
               <HashLink
                 to="#features"
                 className="text-sm font-semibold leading-6 text-yellow-600 hover:text-yellow-400"
               >
-                Lern mehr <span aria-hidden="true">→</span>
+                {content.learnMore} <span aria-hidden="true">→</span>
               </HashLink>
             </div>
           </div>
