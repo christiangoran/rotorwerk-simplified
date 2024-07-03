@@ -1,9 +1,47 @@
 import { StarIcon } from "@heroicons/react/24/outline";
-
 import icon from "../assets/icon-rotorwerk-1.png";
 import icon2 from "../assets/icon-rotorwerk-2.webp";
+import { useLanguage } from "../context/LanguageContext";
+
+const testimonialsContent = {
+  de: [
+    {
+      stars: 5,
+      text: "“Keiner unserer Kollegen konnte sich tief genug einarbeiten, um ein wirtschaftliches Verfahren zu entwickeln. Wir haben das Büro von Rotorwerk durch einen gemeinsamen Kunden bei der Arbeit an einer Windturbine kennengelernt und schätzen gelernt. Dafür sind wir dankbar. Seit diesem gemeinsamen Start haben wir erfolgreich eine Reihe von Kundenprojekten zusammen abgeschlossen.”",
+      author: "Thorsten Loth",
+      role: "Ingenieur bei Jencad.de",
+      image: icon,
+    },
+    {
+      stars: 5,
+      text: "“Was wir an der Zusammenarbeit mit Rotorwerk besonders schätzen, ist der sehr angenehme persönliche Kontakt, die schnelle Problemanalyse und der lösungsorientierte und strukturierte Ansatz, basierend auf jahrelanger Erfahrung. Rotorwerk hat immer den richtigen Ansatz für spezielle Anforderungen gefunden. Wir konnten die für den Fortschritt des Projekts wichtigen Zwischenergebnisse mit Rotorwerk zeitnah und detailliert besprechen.”",
+      author: "Mathias Grassow",
+      role: "SCHOTTEL HYDRO GmbH",
+      image: icon2,
+    },
+  ],
+  en: [
+    {
+      stars: 5,
+      text: "“None of our colleagues could delve deep enough to develop a cost-effective process. We got to know and appreciate Rotorwerk's office through a mutual client working on a wind turbine. For that, we are grateful. Since this joint start, we have successfully completed a number of client projects together.”",
+      author: "Thorsten Loth",
+      role: "Engineer at Jencad.de",
+      image: icon,
+    },
+    {
+      stars: 5,
+      text: "“What we particularly appreciate about working with Rotorwerk is the very pleasant personal contact, the quick problem analysis, and the solution-oriented and structured approach based on years of experience. Rotorwerk has always found the right approach for special requirements. We were able to discuss the interim results, which were important for the progress of the project, with Rotorwerk promptly and in detail.”",
+      author: "Mathias Grassow",
+      role: "SCHOTTEL HYDRO GmbH",
+      image: icon2,
+    },
+  ],
+};
 
 const Testimonials = () => {
+  const { language } = useLanguage();
+  const content = testimonialsContent[language];
+
   return (
     <div className="relative flex px-4 py-32">
       <div className="absolute inset-0 overflow-hidden -z-10">
@@ -38,61 +76,36 @@ const Testimonials = () => {
         </svg>
       </div>
       <div className="grid justify-start flex-auto grid-cols-1 gap-10 md:grid-cols-2">
-        <div className="flex flex-col items-start justify-center max-w-xl mx-auto text-left md:pr-12">
-          <div className="flex space-x-1">
-            {[...Array(5)].map((star, index) => (
-              <div key={index}>
-                <StarIcon className="w-6 h-6 text-yellow-600" />
-              </div>
-            ))}
-          </div>
-          <blockquote className="mt-4 text-xl italic text-gray-600">
-            “Keiner unserer Kollegen konnte sich tief genug einarbeiten, um ein
-            wirtschaftliches Verfahren zu entwickeln. Wir haben das Büro von
-            Rotorwerk durch einen gemeinsamen Kunden bei der Arbeit an einer
-            Windturbine kennengelernt und schätzen gelernt. Dafür sind wir
-            dankbar. Seit diesem gemeinsamen Start haben wir erfolgreich eine
-            Reihe von Kundenprojekten zusammen abgeschlossen.”
-          </blockquote>
-          <div className="flex items-center mt-6 space-x-3">
-            <img className="w-12 h-12 rounded-full" src={icon} alt="User" />
-            <div className="text-left">
-              <div className="text-base font-medium text-gray-900">
-                Thorsten Loth
-              </div>
-              <div className="text-sm text-gray-500">
-                Ingenieur bei Jencad.de
+        {content.map((testimonial, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-start justify-center max-w-xl mx-auto text-left md:pr-12"
+          >
+            <div className="flex space-x-1">
+              {[...Array(testimonial.stars)].map((_, index) => (
+                <div key={index}>
+                  <StarIcon className="w-6 h-6 text-yellow-600" />
+                </div>
+              ))}
+            </div>
+            <blockquote className="mt-4 text-xl italic text-gray-600">
+              {testimonial.text}
+            </blockquote>
+            <div className="flex items-center mt-6 space-x-3">
+              <img
+                className="w-12 h-12 rounded-full"
+                src={testimonial.image}
+                alt="User"
+              />
+              <div className="text-left">
+                <div className="text-base font-medium text-gray-900">
+                  {testimonial.author}
+                </div>
+                <div className="text-sm text-gray-500">{testimonial.role}</div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col items-start justify-center mx-auto text-left md:pl-12">
-          <div className="flex space-x-1">
-            {[...Array(5)].map((star, index) => (
-              <div key={index}>
-                <StarIcon className="w-6 h-6 text-yellow-600" />
-              </div>
-            ))}
-          </div>
-          <blockquote className="mt-4 text-xl italic text-gray-600">
-            “Was wir an der Zusammenarbeit mit Rotorwerk besonders schätzen, ist
-            der sehr angenehme persönliche Kontakt, die schnelle Problemanalyse
-            und der lösungsorientierte und strukturierte Ansatz, basierend auf
-            jahrelanger Erfahrung. Rotorwerk hat immer den richtigen Ansatz für
-            spezielle Anforderungen gefunden. Wir konnten die für den
-            Fortschritt des Projekts wichtigen Zwischenergebnisse mit Rotorwerk
-            zeitnah und detailliert besprechen.”
-          </blockquote>
-          <div className="flex items-center mt-6 space-x-3">
-            <img className="w-12 h-12 rounded-full" src={icon2} alt="User" />
-            <div className="text-left">
-              <div className="text-base font-medium text-gray-900">
-                Mathias Grassow
-              </div>
-              <div className="text-sm text-gray-500">SCHOTTEL HYDRO GmbH</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
