@@ -20,56 +20,109 @@ import logo from "../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
 import rwAgb from "../assets/rw_agb.pdf";
 import { Logo } from "./Logo";
+import { useLanguage } from "../context/LanguageContext";
 
 // ----------------MENU ITEMS----------------
 
-const products = [
-  {
-    name: "Konstruktion",
-    description: "Entwerfen, analysieren und optimieren komplexer Systeme.",
-    href: "konstruktion",
-    icon: WrenchScrewdriverIcon,
-  },
-  {
-    name: "FEM",
-    description:
-      "Unsere fortschrittlichen Techniken gewährleisten Präzision und Sicherheit in Ihren Projekten.",
-    href: "fem",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "WEA-Entwicklung",
-    description:
-      "Wir entwerfen und optimieren Komponenten für maximale Effizienz und Zuverlässigkeit.",
-    href: "wea-entwicklung",
-    icon: ClipboardDocumentCheckIcon,
-  },
-  {
-    name: "Tech. Dokumentation",
-    description:
-      "Wir erstellen umfassende technische Dokumentationen zur Unterstützung Ihrer Ingenieurprozesse.",
-    href: "documentation",
-    icon: DocumentChartBarIcon,
-  },
-  {
-    name: "Zulieferauswahl",
-    description:
-      "Unsere Betriebsfestigkeitsanalyse bewertet die Haltbarkeit und Lebensdauer mechanischer Komponenten.",
-    href: "zulieferauswahl",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Betriebsfestigkeit",
-    description:
-      "Wir unterstützen Sie bei der Auswahl der besten Lieferanten für Ihre Ingenieuranforderungen.",
-    href: "betriebsfestigkeit",
-    icon: CubeTransparentIcon,
-  },
-];
-const callsToAction = [
-  { name: "E-Mail uns", href: "kontakt", icon: InboxArrowDownIcon },
-  { name: "Kontakt uns", href: "tel:+491234567890", icon: PhoneIcon },
-];
+const productsContent = {
+  de: [
+    {
+      name: "Konstruktion",
+      description: "Entwerfen, analysieren und optimieren komplexer Systeme.",
+      href: "konstruktion",
+      icon: WrenchScrewdriverIcon,
+    },
+    {
+      name: "FEM",
+      description:
+        "Unsere fortschrittlichen Techniken gewährleisten Präzision und Sicherheit in Ihren Projekten.",
+      href: "fem",
+      icon: ChartPieIcon,
+    },
+    {
+      name: "WEA-Entwicklung",
+      description:
+        "Wir entwerfen und optimieren Komponenten für maximale Effizienz und Zuverlässigkeit.",
+      href: "wea-entwicklung",
+      icon: ClipboardDocumentCheckIcon,
+    },
+    {
+      name: "Tech. Dokumentation",
+      description:
+        "Wir erstellen umfassende technische Dokumentationen zur Unterstützung Ihrer Ingenieurprozesse.",
+      href: "documentation",
+      icon: DocumentChartBarIcon,
+    },
+    {
+      name: "Zulieferauswahl",
+      description:
+        "Unsere Betriebsfestigkeitsanalyse bewertet die Haltbarkeit und Lebensdauer mechanischer Komponenten.",
+      href: "zulieferauswahl",
+      icon: SquaresPlusIcon,
+    },
+    {
+      name: "Betriebsfestigkeit",
+      description:
+        "Wir unterstützen Sie bei der Auswahl der besten Lieferanten für Ihre Ingenieuranforderungen.",
+      href: "betriebsfestigkeit",
+      icon: CubeTransparentIcon,
+    },
+  ],
+  en: [
+    {
+      name: "Design",
+      description: "Designing, analyzing, and optimizing complex systems.",
+      href: "konstruktion",
+      icon: WrenchScrewdriverIcon,
+    },
+    {
+      name: "FEA",
+      description:
+        "Our advanced techniques ensure precision and safety in your projects.",
+      href: "fem",
+      icon: ChartPieIcon,
+    },
+    {
+      name: "WEA Development",
+      description:
+        "We design and optimize components for maximum efficiency and reliability.",
+      href: "wea-entwicklung",
+      icon: ClipboardDocumentCheckIcon,
+    },
+    {
+      name: "Tech. Documentation",
+      description:
+        "We create comprehensive technical documentation to support your engineering processes.",
+      href: "documentation",
+      icon: DocumentChartBarIcon,
+    },
+    {
+      name: "Supplier Selection",
+      description:
+        "Our fatigue strength analysis evaluates the durability and lifespan of mechanical components.",
+      href: "zulieferauswahl",
+      icon: SquaresPlusIcon,
+    },
+    {
+      name: "Fatigue Strength",
+      description:
+        "We assist you in selecting the best suppliers for your engineering needs.",
+      href: "betriebsfestigkeit",
+      icon: CubeTransparentIcon,
+    },
+  ],
+};
+
+const callsToActionContent = {
+  de: [
+    { name: "E-Mail uns", href: "kontakt", icon: InboxArrowDownIcon },
+    { name: "Kontakt uns", href: "tel:+491234567890", icon: PhoneIcon },
+  ],
+  en: [
+    { name: "Email Us", href: "kontakt", icon: InboxArrowDownIcon },
+    { name: "Call Us", href: "tel:+491234567890", icon: PhoneIcon },
+  ],
+};
 
 // ----------------MENU ITEMS END----------------
 
@@ -79,6 +132,10 @@ function classNames(...classes) {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, changeLanguage } = useLanguage();
+
+  const products = productsContent[language];
+  const callsToAction = callsToActionContent[language];
 
   return (
     <header className="relative top-0 bg-white">
@@ -107,7 +164,7 @@ export default function Header() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="flex items-center text-sm font-semibold leading-6 text-gray-900 gap-x-1">
-              Produkt
+              {language === "de" ? "Produkt" : "Product"}
               <ChevronDownIcon
                 className="flex-none w-5 h-5 text-gray-400"
                 aria-hidden="true"
@@ -172,19 +229,19 @@ export default function Header() {
             to="#contact"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Kontakt
+            {language === "de" ? "Kontakt" : "Contact"}
           </HashLink>
           <Link
             to="impressum"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Impressum
+            {language === "de" ? "Impressum" : "Imprint"}
           </Link>
           <Link
             to="impressum"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            Datenschutz
+            {language === "de" ? "Datenschutz" : "Privacy Policy"}
           </Link>
           <a
             href={rwAgb}
@@ -192,14 +249,14 @@ export default function Header() {
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            AGB
+            {language === "de" ? "AGB" : "Terms"}
           </a>
-          <Link
-            to="english"
+          <button
+            onClick={() => changeLanguage(language === "de" ? "en" : "de")}
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            English
-          </Link>
+            {language === "de" ? "English" : "Deutsch"}
+          </button>
         </Popover.Group>
       </nav>
       <Dialog
@@ -231,7 +288,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
+                        {language === "de" ? "Produkt" : "Product"}
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -259,26 +316,28 @@ export default function Header() {
                   to="#contact"
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
-                  Kontakt
+                  {language === "de" ? "Kontakt" : "Contact"}
                 </HashLink>
                 <Link
                   to="impressum"
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
-                  Impressum
+                  {language === "de" ? "Impressum" : "Imprint"}
                 </Link>
                 <Link
                   to="datenschutz"
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
-                  Datenschutz
+                  {language === "de" ? "Datenschutz" : "Privacy Policy"}
                 </Link>
-                <Link
-                  to="english"
+                <button
+                  onClick={() =>
+                    changeLanguage(language === "de" ? "en" : "de")
+                  }
                   className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
                 >
-                  English
-                </Link>
+                  {language === "de" ? "English" : "Deutsch"}
+                </button>
               </div>
             </div>
           </div>

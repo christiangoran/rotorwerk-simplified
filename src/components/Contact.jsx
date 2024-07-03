@@ -1,49 +1,74 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
+import { useLanguage } from "../context/LanguageContext";
+
+const contactContent = {
+  de: {
+    title: "Interessiert?",
+    description:
+      "Teilen Sie uns Ihr Anliegen mit und wir werden uns bei Ihnen melden.",
+    form: {
+      firstName: "Vorname",
+      lastName: "Nachname",
+      email: "Email",
+      phoneNumber: "Telefonnummer",
+      message: "Nachricht",
+      agreeToPolicies:
+        "Durch die Auswahl dieser Option erklären Sie sich mit unserer",
+      privacyPolicy: "Datenschutzbestimmungen",
+      submitButton: "Lass uns reden",
+    },
+  },
+  en: {
+    title: "Interested?",
+    description: "Let us know your concern and we will get back to you.",
+    form: {
+      firstName: "First Name",
+      lastName: "Last Name",
+      email: "Email",
+      phoneNumber: "Phone Number",
+      message: "Message",
+      agreeToPolicies: "By selecting this option, you agree to our",
+      privacyPolicy: "privacy policy",
+      submitButton: "Let's Talk",
+    },
+  },
+};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Contact() {
+  const { language } = useLanguage(); // Hämta språk från kontexten
+  const content = contactContent[language]; // Välj innehåll baserat på språk
+
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <div className="isolate  bg-white px-6 py-24 sm:py-32 lg:px-8" id="contact">
-      {/* <div
-        className="absolute inset-x-0 top-[-10rem] z-[-10] transform-gpu overflow-hidden blur-3xl sm:top-[-50rem]"
-        aria-hidden="true"
-      >
-        <div
-          className="mt-1 relative left-1/2 z-[-20] aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#32402C] to-[#96A621] opacity-40 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
-      </div> */}
-      <div className="mx-auto max-w-2xl text-left sm:text-center">
+    <div className="px-6 py-24 bg-white isolate sm:py-32 lg:px-8" id="contact">
+      <div className="max-w-2xl mx-auto text-left sm:text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Interessiert?
+          {content.title}
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Teilen Sie uns Ihr Anliegen mit und wir werden uns bei Ihnen melden.
+          {content.description}
         </p>
       </div>
+
       <form
         action="#"
         method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-10"
+        className="max-w-xl mx-auto mt-16 sm:mt-10"
       >
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2  text-left sm:text-center">
+        <div className="grid grid-cols-1 text-left gap-x-8 gap-y-6 sm:grid-cols-2 sm:text-center">
           <div>
             <label
               htmlFor="first-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Vorname
+              {content.form.firstName}
             </label>
-
             <div className="mt-2.5">
               <input
                 type="text"
@@ -60,7 +85,7 @@ export default function Contact() {
               htmlFor="last-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Nachname
+              {content.form.lastName}
             </label>
             <div className="mt-2.5">
               <input
@@ -78,7 +103,7 @@ export default function Contact() {
               htmlFor="email"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Email
+              {content.form.email}
             </label>
             <div className="mt-2.5">
               <input
@@ -96,7 +121,7 @@ export default function Contact() {
               htmlFor="phone-number"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Telefonnummer
+              {content.form.phoneNumber}
             </label>
             <div className="relative mt-2.5">
               <input
@@ -114,7 +139,7 @@ export default function Contact() {
               htmlFor="message"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Message
+              {content.form.message}
             </label>
             <div className="mt-2.5">
               <textarea
@@ -127,7 +152,7 @@ export default function Contact() {
             </div>
           </div>
           <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
-            <div className="flex h-6 items-center">
+            <div className="flex items-center h-6">
               <Switch
                 checked={agreed}
                 onChange={setAgreed}
@@ -147,9 +172,9 @@ export default function Contact() {
               </Switch>
             </div>
             <Switch.Label className="text-sm leading-6 text-gray-600">
-              Durch die Auswahl dieser Option erklären Sie sich mit unserer{" "}
+              {content.form.agreeToPolicies}{" "}
               <a href="#" className="font-semibold text-lime-950">
-                &nbsp;Datenschutzbestimmungen&nbsp;
+                {content.form.privacyPolicy}
               </a>
               .
             </Switch.Label>
@@ -160,7 +185,7 @@ export default function Contact() {
             type="submit"
             className="block w-full rounded-md bg-lime-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-lime-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-800"
           >
-            Lass uns reden
+            {content.form.submitButton}
           </button>
         </div>
       </form>

@@ -12,23 +12,26 @@ import Zulieferauswahl from "./pages/Zulieferauswahl";
 import Betriebsfestigkeit from "./pages/Betriebsfastigkeit";
 import Impressum from "./pages/Impressum";
 import CookieBanner from "./components/CookieBanner";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
     <BrowserRouter basename="/rotorwerk-simplified">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Hero />} exact />
-        <Route path="/konstruktion" element={<Konstruktion />} />
-        <Route path="/fem" element={<Fem />} />
-        <Route path="/wea-entwicklung" element={<Wea />} />
-        <Route path="/documentation" element={<Documentation />} />
-        <Route path="/zulieferauswahl" element={<Zulieferauswahl />} />
-        <Route path="/betriebsfestigkeit" element={<Betriebsfestigkeit />} />
-        <Route path="/impressum" element={<Impressum />} />
-      </Routes>
-      <Footer />
-      <CookieBanner />
+      <LanguageProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Hero />} exact />
+          <Route path="/konstruktion" element={<Konstruktion />} />
+          <Route path="/fem" element={<Fem />} />
+          <Route path="/wea-entwicklung" element={<Wea />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/zulieferauswahl" element={<Zulieferauswahl />} />
+          <Route path="/betriebsfestigkeit" element={<Betriebsfestigkeit />} />
+          <Route path="/impressum" element={<Impressum />} />
+        </Routes>
+        <Footer />
+        <CookieBanner />
+      </LanguageProvider>
     </BrowserRouter>
   );
 }

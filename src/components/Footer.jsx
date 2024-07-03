@@ -1,12 +1,11 @@
-import rotorwerk_logo from "../assets/logo.svg";
 import Contact from "./Contact";
 import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-white rounded-lg shadow m-4">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <footer className="m-4 bg-white rounded-lg shadow">
+      <div className="w-full max-w-screen-xl p-4 mx-auto md:py-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <a href="/">
             <span className="sr-only">RotorWerk</span>
@@ -37,7 +36,7 @@ const Footer = () => {
           </ul> */}
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span className="block text-sm text-gray-500 text-center dark:text-gray-400">
+        <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
           © 2024{" "}
           <a href="#" className="hover:underline">
             Rotorwerk Ingenieurdienstleistungen GmbH
