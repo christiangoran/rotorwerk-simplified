@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Switch } from "@headlessui/react";
 import { useLanguage } from "../context/LanguageContext";
+import emailjs from "@emailjs/browser";
 
 const contactContent = {
   de: {
@@ -40,10 +41,48 @@ function classNames(...classes) {
 }
 
 export default function Contact() {
-  const { language } = useLanguage(); // Hämta språk från kontexten
-  const content = contactContent[language]; // Välj innehåll baserat på språk
+  const { language } = useLanguage();
+  const content = contactContent[language];
+  const form = useRef();
+  const [sent, setSent] = useState(false);
 
   const [agreed, setAgreed] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_ei0zsbp", "template_hix8ntd", form.current, {
+        publicKey: "udgwjALMTsCmAeIm0",
+      })
+      .then(
+        () => {
+          setSent(true);
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
+  if (sent) {
+    return (
+      <div
+        className="px-6 py-24 bg-white isolate sm:py-32 lg:px-8"
+        id="contact"
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Sent!
+          </h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            Wir werden uns so schnell wie möglich bei Ihnen melden.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="px-6 py-24 bg-white isolate sm:py-32 lg:px-8" id="contact">
@@ -60,6 +99,8 @@ export default function Contact() {
         action="#"
         method="POST"
         className="max-w-xl mx-auto mt-16 sm:mt-10"
+        ref={form}
+        onSubmit={sendEmail}
       >
         <div className="grid grid-cols-1 text-left gap-x-8 gap-y-6 sm:grid-cols-2 sm:text-center">
           <div>

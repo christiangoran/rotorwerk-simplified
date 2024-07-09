@@ -16,7 +16,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
-    <BrowserRouter basename="/rotorwerk-simplified">
+    <BrowserRouter>
       <LanguageProvider>
         <Header />
         <Routes>

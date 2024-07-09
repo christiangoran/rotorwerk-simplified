@@ -1,17 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "tailwindcss"; // ändra till import
-import autoprefixer from "autoprefixer"; // ändra till import
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/rotorwerk-simplified/",
+  base: "/",
   css: {
     postcss: {
-      plugins: [
-        tailwindcss, // ändra till tailwindcss
-        autoprefixer, // ändra till autoprefixer
-      ],
+      plugins: [tailwindcss, autoprefixer],
     },
   },
 });
